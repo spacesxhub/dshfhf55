@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hard work today, rewards tomorrow</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f3f3f3;
+    color:#111;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+.container{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+    padding:20px;
+}
+
+.video-wrapper{
+    width:720px;
+    max-width:90%;
+    background:black;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+video{
+    width:100%;
+    display:block;
+    background:black;
+}
+
+#ad-link{
+    display:inline-block;
+    padding:12px 24px;
+    background:#000;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    transition:.3s;
+}
+
+#ad-link:hover{
+    opacity:.9;
+}
+
+footer{
+    text-align:center;
+    padding:24px;
+    font-size:13px;
+    color:#666;
+}
+
+@media(max-width:768px){
+    .container{
+        padding:12px;
+    }
+}
+</style>
+</head>
+
+<body oncontextmenu="return false">
+
+<main class="container">
+
+<div class="video-wrapper">
+<video
+    id="video"
+    controls
+    controlsList="nodownload noplaybackrate"
+    disablePictureInPicture
+    poster="https://cdn.aceimg.com/tE8wgVav4.png"
+    preload="metadata"
+>
+<source src="https://cdn.baddiehub.com/RynC.mp4" type="video/mp4">
+</video>
+</div>
+
+<a id="ad-link" href="#" target="_blank"></a>
+
+</main>
+
+<footer>
+Copyright © 2026
+</footer>
+
+<script>
+const encodedUrl = "aHR0cHM6Ly94LWh1YmIuZ2l0aHViLmlvLzRqMS8=";
+
+const texts = [
+    "Full Length Video",
+    "Watch Now",
+    "See More Video",
+    "Full HD Video"
+];
+
+const adLink = document.getElementById("ad-link");
+
+adLink.href = atob(encodedUrl);
+
+adLink.innerHTML =
+"<strong>" +
+texts[Math.floor(Math.random() * texts.length)] +
+"</strong>";
+
+document.addEventListener('contextmenu', e => {
+    e.preventDefault();
+});
+
+document.addEventListener('keydown', function(e){
+
+    if(e.key === "F12"){
+        e.preventDefault();
+    }
+
+    if(e.ctrlKey && e.shiftKey && e.key === "I"){
+        e.preventDefault();
+    }
+
+    if(e.ctrlKey && e.shiftKey && e.key === "J"){
+        e.preventDefault();
+    }
+
+    if(e.ctrlKey && e.key.toLowerCase() === "u"){
+        e.preventDefault();
+    }
+
+});
+
+document.getElementById("video").addEventListener("dragstart", function(e){
+    e.preventDefault();
+});
+</script>
